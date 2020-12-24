@@ -1,0 +1,8 @@
+FROM python
+RUN mkdir /presentation
+COPY /folder/ /presentation
+WORKDIR /presentation
+RUN pip3 install -r requirements.txt
+EXPOSE 8000
+ENTRYPOINT [ "python3" ] 
+CMD ["presentation.py"]
