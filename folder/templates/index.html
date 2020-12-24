@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>My app</title>
+{% endblock %}
+
+{% block body %}
+<h1 style="text-align: center">Give university name / search by location</h1>
+    <form action="/university" method="GET">
+        <input type="text" name="university" id="university" placeholder="Eg: IIIT Hyderabad">
+        <input type="submit" value="Search by univ">
+    </form>
+    <form action="/country" method='GET'>
+        <select id="country" name="country">
+            <option value=None disabled selected>--select--</option>
+            {%for c in countries%}
+            <option value="{{c}}">{{c}}</option>
+            {%endfor%}
+        </select>
+        <input type="submit" value="Search by country">
+    </form>
+{% endblock %}
